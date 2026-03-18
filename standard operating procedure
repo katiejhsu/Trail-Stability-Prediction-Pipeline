@@ -1,0 +1,34 @@
+Standard Operating Procedure
+Trail Stability Prediction Pipeline — SOP
+
+Prerequisites
+Install dependencies once before running:
+bashpython3 -m pip install pandas numpy scikit-learn matplotlib
+```
+
+---
+
+**File setup**
+
+All four files must be in the same folder:
+```
+run project/
+├── runner_pipeline.py
+├── shoe_specs.csv
+└── runner_tests.csv
+
+Running the pipeline
+Open your terminal, navigate to the folder, and run:
+cd path/to/run\ project
+python3 runner_pipeline.py
+Or just press the Run button in VS Code with runner_pipeline.py open.
+
+Expected output
+When it completes successfully you should see all 6 steps with ✔ checkmarks and a 5-row preview table. Two files will be created inside a running_output/ folder that the script generates automatically:
+FileWhat it isfeature_importance.pngBar chart for rundata_powerbi_ready.csvClean data + predictions for Power BI
+
+If something goes wrong
+ProblemFixModuleNotFoundErrorRun python3 -m pip install pandas numpy scikit-learn matplotlibFileNotFoundError for CSVsMake sure both CSVs are in the same folder as the scriptStability_Rating values above 10Add the hard cap fix to the cleaning stepChart not openingIt's saved to brooks_output/ — open it from there directly
+
+Updating with real data
+When real runner data is available, replace shoe_specs.csv and runner_tests.csv with the actual files, keeping the same column names. Re-run the script — everything else is automatic.
